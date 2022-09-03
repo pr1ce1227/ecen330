@@ -7,7 +7,7 @@ include_directories(drivers)
 
 # add_compile_options(-Wall -Wextra -pedantic)
 # add_compile_options(-Wall -Wextra -pedantic -Werror)
-
+set(CMAKE_BUILD_TYPE Debug)
 if (NOT EMU)
     # These are the options used to compile and run on the physical Zybo board    
     # You will need to compile using "cmake -DBOARD=1"
