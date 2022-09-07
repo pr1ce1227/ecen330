@@ -72,6 +72,7 @@ int main() {
                        twoThirdWidth, tenthHeight, DISPLAY_WHITE);
   display_drawTriangle(halfWidth, twoThirdHeight, thirdWidth, nineTenthHeight,
                        twoThirdWidth, nineTenthHeight, DISPLAY_YELLOW);
+ 
   return 0;
 
   // test
