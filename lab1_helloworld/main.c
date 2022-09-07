@@ -13,35 +13,18 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 
 #include "display.h"
 
-#define halfHeight DISPLAY_HEIGHT / 2
-#define halfWidth DISPLAY_WIDTH / 2
-#define origin 0
-#define radius 25
-#define quarterWidth DISPLAY_WIDTH * .25
-#define threeQuarterWidth DISPLAY_WIDTH * .75
-#define thirdHeight DISPLAY_HEIGHT * .33
-#define twoThirdHeight DISPLAY_HEIGHT * .66
-#define thirdWidth DISPLAY_WIDTH * .33
-#define twoThirdWidth DISPLAY_WIDTH * .66
-#define tenthHeight DISPLAY_HEIGHT * .1
-#define nineTenthHeight DISPLAY_HEIGHT * .9
-
-typedef struct {
-  unsigned char Radius; 
-  unsigned char x; 
-  unsigned char y; 
-} circle; 
-
-typedef struct{
-  unsigned char x1, y1; 
-  unsigned char x2, y2; 
-  unsigned char x3, y3; 
-}triangle; 
-
-typedef struct{
-  unsigned char x1, y1; 
-  unsigned char x2, y2; 
-}line; 
+#define HALFHEIGHT DISPLAY_HEIGHT / 2
+#define HALFWIDTH DISPLAY_WIDTH / 2
+#define ORIGIN 0
+#define RADIUS 25
+#define QUARTERWIDTH DISPLAY_WIDTH * .25
+#define THREEQUARTERWIDTH DISPLAY_WIDTH * .75
+#define THIRDHEIGHT DISPLAY_HEIGHT * .33
+#define TWOTHIRDHEIGHT DISPLAY_HEIGHT * .66
+#define THIRDWIDTH DISPLAY_WIDTH * .33
+#define TWOTHIRDWIDTH DISPLAY_WIDTH * .66
+#define TENTHHEIGHT DISPLAY_HEIGHT * .1
+#define NINETENTHHEIGHT DISPLAY_HEIGHT * .9
 
 // Print out "hello world" on both the console and the LCD screen.
 int main() {
@@ -50,29 +33,22 @@ int main() {
   display_init();
   display_fillScreen(DISPLAY_BLACK); // Blank the screen.
 
-  triangle emptyTriangle = {1,2,3,4,5,6};
-  triangle fullTriangle = {1,2,3,4,5,6}; 
-  circle emptyCircle = {1,2,3}; 
-  circle fullCircle = {1,2,3}; 
-  line topLeft = {1,2,3, 4};  
-  line topRight = {1,2,3,4};
-
   // 2 green crossing lines
-  display_drawLine(origin, origin, DISPLAY_WIDTH, DISPLAY_HEIGHT,
+  display_drawLine(ORIGIN, ORIGIN, DISPLAY_WIDTH, DISPLAY_HEIGHT,
                    DISPLAY_GREEN);
-  display_drawLine(origin, DISPLAY_HEIGHT, DISPLAY_WIDTH, origin,
+  display_drawLine(ORIGIN, DISPLAY_HEIGHT, DISPLAY_WIDTH, ORIGIN,
                    DISPLAY_GREEN);
 
   // 2 circles, one empty one filled
-  display_drawCircle(quarterWidth, halfHeight, radius, DISPLAY_RED);
-  display_fillCircle(threeQuarterWidth, halfHeight, radius, DISPLAY_RED);
+  display_drawCircle(QUARTERWIDTH, HALFHEIGHT, RADIUS, DISPLAY_RED);
+  display_fillCircle(THREEQUARTERWIDTH, HALFHEIGHT, RADIUS, DISPLAY_RED);
 
   // 2 triangles, one empty one filled
-  display_fillTriangle(halfWidth, thirdHeight, thirdWidth, tenthHeight,
-                       twoThirdWidth, tenthHeight, DISPLAY_WHITE);
-  display_drawTriangle(halfWidth, twoThirdHeight, thirdWidth, nineTenthHeight,
-                       twoThirdWidth, nineTenthHeight, DISPLAY_YELLOW);
- 
+  display_fillTriangle(HALFWIDTH, THIRDHEIGHT, THIRDWIDTH, TENTHHEIGHT,
+                       TWOTHIRDWIDTH, TENTHHEIGHT, DISPLAY_WHITE);
+  display_drawTriangle(HALFWIDTH, TWOTHIRDHEIGHT, THIRDWIDTH, NINETENTHHEIGHT,
+                       TWOTHIRDWIDTH, NINETENTHHEIGHT, DISPLAY_YELLOW);
+
   return 0;
 
   // test
