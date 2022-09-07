@@ -26,12 +26,36 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 #define tenthHeight DISPLAY_HEIGHT * .1
 #define nineTenthHeight DISPLAY_HEIGHT * .9
 
+typedef struct {
+  unsigned char Radius; 
+  unsigned char x; 
+  unsigned char y; 
+} circle; 
+
+typedef struct{
+  unsigned char x1, y1; 
+  unsigned char x2, y2; 
+  unsigned char x3, y3; 
+}triangle; 
+
+typedef struct{
+  unsigned char x1, y1; 
+  unsigned char x2, y2; 
+}line; 
+
 // Print out "hello world" on both the console and the LCD screen.
 int main() {
 
   // Initialize display driver, and fill scren with black
   display_init();
   display_fillScreen(DISPLAY_BLACK); // Blank the screen.
+
+  triangle emptyTriangle = {1,2,3,4,5,6};
+  triangle fullTriangle = {1,2,3,4,5,6}; 
+  circle emptyCircle = {1,2,3}; 
+  circle fullCircle = {1,2,3}; 
+  line topLeft = {1,2,3, 4};  
+  line topRight = {1,2,3,4};
 
   // 2 green crossing lines
   display_drawLine(origin, origin, DISPLAY_WIDTH, DISPLAY_HEIGHT,
@@ -50,5 +74,5 @@ int main() {
                        twoThirdWidth, nineTenthHeight, DISPLAY_YELLOW);
   return 0;
 
-  //test
+  // test
 }
