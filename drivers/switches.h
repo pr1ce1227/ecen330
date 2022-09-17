@@ -12,9 +12,9 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 #ifndef SWITCHES
 #define SWITCHES
 
-#include <stdint.h>
-#include "xparameters.h"
 #include "xil_io.h"
+#include "xparameters.h"
+#include <stdint.h>
 
 #define SWITCHES_SW0_MASK 0x1
 #define SWITCHES_SW1_MASK 0x2
