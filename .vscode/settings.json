@@ -1,0 +1,15 @@
+{
+    "[c]": {
+        "editor.formatOnSave": true,
+    },
+    "[cpp]": {
+        "editor.formatOnSave": true,
+    },
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "files.associations": {
+        "display.h": "c",
+        "*.txt": "c",
+        "pipes.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
+}
